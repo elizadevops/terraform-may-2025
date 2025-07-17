@@ -14,4 +14,9 @@ provider "aws" {
 resource "aws_key_pair" "deployer" {
   key_name   = "world-key"
   public_key = file("~/.ssh/id_rsa.pub")
+
+  tags = {
+    Environment = "Dev"
+    Team = "Devops"
+  }
 }
